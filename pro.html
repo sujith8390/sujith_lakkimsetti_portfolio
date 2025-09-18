@@ -6,24 +6,14 @@
   <title>Sujith Lakkimsetti — Portfolio</title>
   <meta name="description" content="Portfolio of Sujith Lakkimsetti — Software Developer / Data Analyst. Projects, experience, skills, and contact." />
   <style>
-    /* ===== Tokens ===== */
     :root{
-      --bg:#0a0d14;
-      --panel:#0e1220;
-      --panel-2:#0b0f1b;
-      --text:#eef2ff;
-      --muted:#9aa3b2;
-      --border:#1f2a3b;
-      --accent-pink:#ff4ecd;
-      --accent-purple:#7c3aed;
-      --accent-cyan:#22d3ee;
+      --bg:#0a0d14; --panel:#0e1220; --panel-2:#0b0f1b; --text:#eef2ff; --muted:#9aa3b2;
+      --border:#1f2a3b; --accent-pink:#ff4ecd; --accent-purple:#7c3aed; --accent-cyan:#22d3ee;
       --shadow:0 18px 80px rgba(0,0,0,.45);
     }
-
-    /* ===== Base ===== */
     *{box-sizing:border-box}
     html,body{height:100%}
-    html{scroll-behavior:smooth;}  /* smooth jump to sections */
+    html{scroll-behavior:smooth;}
     body{
       margin:0; font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
       color:var(--text);
@@ -32,118 +22,70 @@
         radial-gradient(1400px 800px at 80% -10%, #7c3aed66 0%, transparent 60%),
         radial-gradient(1200px 700px at 10% -10%, #22d3ee55 0%, transparent 60%),
         linear-gradient(#0a0d14, #0a0d14);
-      background-attachment:fixed;
-      line-height:1.6;
+      background-attachment:fixed; line-height:1.6;
     }
-    a{color:#a3b8ff;text-decoration:none}
-    a:hover{text-decoration:underline}
+    a{color:#a3b8ff;text-decoration:none} a:hover{text-decoration:underline}
     .container{width:min(1200px,92%);margin:0 auto}
+    header{display:none!important}
 
-    /* ===== Header (hidden) ===== */
-    header{ display:none !important; }
-
-    /* ===== Hero ===== */
     .hero{display:grid;gap:36px;align-items:center;padding:56px 0}
-    @media (min-width: 980px){ .hero{grid-template-columns:1.2fr .8fr} }
+    @media (min-width:980px){.hero{grid-template-columns:1.2fr .8fr}}
+    .eyebrow{display:inline-flex;gap:8px;padding:6px 12px;border-radius:999px;font-size:13px;color:#d7def1;background:#0f1422;border:1px dashed #2a3346}
 
-    .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;font-size:13px;
-      color:#d7def1;background:#0f1422;border:1px dashed #2a3346}
-    h1{margin:10px 0 10px;font-size:clamp(40px,6vw,72px);line-height:1.02;letter-spacing:-.02em}
-    .grad{background:linear-gradient(90deg,var(--accent-pink),var(--accent-purple),var(--accent-cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+    /* Headline + role */
+    h1{margin:10px 0 6px;font-size:clamp(34px,5vw,56px);line-height:1.1;letter-spacing:-.02em}
+    .role{margin:0 0 10px;color:#cfe2ff;font-weight:700;font-size:clamp(18px,2.4vw,24px)}
     .lede{color:var(--muted);font-size:clamp(16px,2vw,20px)}
 
-    /* Photo glow */
     .photo-wrap{max-width:420px;margin-inline:auto}
-    .glow{
-      padding:4px;border-radius:22px;
-      background:linear-gradient(135deg,var(--accent-pink),var(--accent-purple) 55%,var(--accent-cyan));
-      box-shadow:
-        0 0 0 6px #ffffff12 inset,
-        0 20px 80px rgba(124,58,237,.35),
-        0 12px 50px rgba(34,211,238,.25),
-        0 0 60px #ff4ecd33;
-    }
+    .glow{padding:4px;border-radius:22px;background:linear-gradient(135deg,var(--accent-pink),var(--accent-purple) 55%,var(--accent-cyan));box-shadow:0 0 0 6px #ffffff12 inset,0 20px 80px rgba(124,58,237,.35),0 12px 50px rgba(34,211,238,.25),0 0 60px #ff4ecd33}
     .glow img{display:block;width:100%;height:auto;border-radius:18px}
 
-    /* ===== Sections ===== */
     .section{padding:48px 0}
     .section-title{font-size:clamp(26px,3vw,36px);margin:0 0 8px}
     .sub{color:var(--muted);margin:0 0 20px}
     .services{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-    .service{
-      position:relative;padding:20px;border-radius:16px;background:linear-gradient(180deg,#0f1424,#0b0f1b);
-      border:1px solid #ffffff12; box-shadow:var(--shadow);
-    }
-    .service::before{
-      content:""; position:absolute; inset:0; border-radius:16px; padding-top:2px;
-      background:linear-gradient(90deg,var(--accent-pink),var(--accent-purple),var(--accent-cyan));
-      -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-      -webkit-mask-composite: xor; mask-composite: exclude;
-      pointer-events:none;
-    }
+    .service{position:relative;padding:20px;border-radius:16px;background:linear-gradient(180deg,#0f1424,#0b0f1b);border:1px solid #ffffff12;box-shadow:var(--shadow)}
+    .service::before{content:"";position:absolute;inset:0;border-radius:16px;padding-top:2px;background:linear-gradient(90deg,var(--accent-pink),var(--accent-purple),var(--accent-cyan));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
     .service h3{margin:2px 0 6px}
-    .badge{display:inline-flex;align-items:center;gap:8px;font-size:12px;color:#c6d0e9}
+    .badge{display:inline-flex;gap:8px;font-size:12px;color:#c6d0e9}
 
     .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
     .card{background:#0f1424;border:1px solid #ffffff12;border-radius:16px;padding:18px;box-shadow:var(--shadow)}
     .card h3{margin:0 0 6px}
 
-    .pdf-frame{width:100%;min-height:72vh;border:1px solid #ffffff12;border-radius:16px;background:#0f1424;box-shadow:var(--shadow)}
+    .nav-bar{width:100%;padding:18px 12px;margin:10px 0 0;border-radius:16px;border:1px solid #ffffff10;background:#0d1120cc;backdrop-filter:blur(8px);box-shadow:var(--shadow)}
+    .seg-nav{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:28px;padding:0;margin:0}
+    .seg-nav a{color:var(--muted);font-weight:700;font-size:clamp(16px,2vw,20px);text-decoration:none}
+    .seg-nav a:hover,.seg-nav a.active{color:var(--text)}
 
-    footer{border-top:1px solid #ffffff12;color:#9aa3b2;padding:26px 0 60px;margin-top:40px}
-
-    /* ======= Primary nav bar ======= */
-    .nav-bar{
-      width: 100%;
-      padding: 18px 12px;
-      margin: 10px 0 0;
-      border-radius: 16px;
-      border: 1px solid #ffffff10;
-      background: #0d1120cc;
-      backdrop-filter: blur(8px);
-      box-shadow: var(--shadow);
-    }
-    .seg-nav{
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      gap: 28px;
-      padding: 0;
-      margin: 0;
-    }
-    .seg-nav a{
-      color: var(--muted);
-      font-weight: 700;
-      font-size: clamp(16px, 2vw, 20px);
-      text-decoration: none;
-    }
-    .seg-nav a:hover,
-    .seg-nav a.active{ color: var(--text); }
-
-    /* ======= Contact section styles ======= */
-    .contact .socials{
-      display:flex;gap:22px;align-items:center;flex-wrap:wrap;margin:6px 0 28px
-    }
-    .contact .socials a{
-      display:inline-flex;align-items:center;justify-content:center;
-      width:56px;height:56px;border-radius:12px;background:#0f1422;border:1px solid #ffffff14;
-      box-shadow:var(--shadow); line-height:0; text-decoration:none; border-bottom:0;
-      transition:transform .18s ease;
-    }
-    .contact .socials a:hover{ transform: translateY(-3px); }
-    .contact .socials svg{width:34px;height:34px;display:block}
+    .contact .socials{display:flex;gap:22px;align-items:center;flex-wrap:wrap;margin:6px 0 28px}
+    .contact .socials a{display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:12px;background:#0f1422;border:1px solid #ffffff14;box-shadow:var(--shadow);line-height:0;text-decoration:none;transition:transform .18s ease}
+    .contact .socials a:hover{transform:translateY(-3px)}
+    .contact .socials img{display:block;max-width:100%}
 
     .tool-icons{display:flex;gap:18px;flex-wrap:wrap;align-items:center;padding:0;margin:0}
     .tool-icons li{list-style:none}
     .tool-icons a{line-height:0;text-decoration:none;border:0}
-    .tool-icons img{
-      width:56px;height:56px;display:block;
-      filter:grayscale(.1) brightness(.95); opacity:.9;
-      transition:transform .2s ease, filter .2s ease, opacity .2s ease;
-    }
+    .tool-icons img{width:56px;height:56px;display:block;filter:grayscale(.1) brightness(.95);opacity:.9;transition:transform .2s ease,filter .2s ease,opacity .2s ease}
     .tool-icons a:hover img{transform:translateY(-4px);filter:none;opacity:1}
+
+    /* Better highlights layout */
+    .highlights { margin:18px 0 0; }
+    .highlights-grid { display:grid; gap:12px; grid-template-columns:1fr; }
+    @media (min-width:980px){ .highlights-grid { grid-template-columns:1fr 1fr; } }
+    .highlight{
+      display:flex; align-items:flex-start; gap:12px;
+      padding:12px 14px; border-radius:12px;
+      background:#0d1120cc; border:1px solid #ffffff12; box-shadow:var(--shadow);
+      color:#dbe3ff; line-height:1.45; font-size:15.5px;
+    }
+    .highlight b{ color:#eef2ff; }
+    .highlight .ico{
+      flex:0 0 28px; height:28px; display:grid; place-items:center;
+      border-radius:8px; background:#121826; border:1px solid #ffffff1c;
+      font-size:16px; line-height:1;
+    }
   </style>
 </head>
 <body>
@@ -152,16 +94,38 @@
     <section class="hero" id="about">
       <div>
         <span class="eyebrow">Software Developer · Data Analyst</span>
-        <h1>
-          <span class="grad">Data-driven developer</span><br/>
-          crafting products that<br/>
-          people love
-        </h1>
+
+        <!-- Updated headline + role -->
+        <h1>Hi 👋, I'm Sujith Lakkimsetti</h1>
+        <p class="role">Data Roles · Salesforce DevOps</p>
+
         <p class="lede">
           I build fast, accessible web apps and analytics tools with Python, SQL, AWS, and React — focused on clear business impact.
         </p>
 
-        <!-- Primary navigation -->
+        <!-- Updated Highlights -->
+        <div class="highlights">
+          <div class="highlights-grid">
+            <div class="highlight">
+              <span class="ico">🔎</span>
+              <div><b>Seeking full-time roles</b>: Data Engineer / Data Analyst and Salesforce DevOps.</div>
+            </div>
+            <div class="highlight">
+              <span class="ico">🧩</span>
+              <div><b>Projects</b>: City Compass (React, Node, SQL, AWS); Salesforce Banking App (Objects, Flows, approvals, dashboards);
+                Flight Ticket Booking (PostgreSQL); Mini Bank (Python OOP + SHA-256 PIN); COVID CT-Scan CNN; Brain-Tumor ML (XGBoost/CatBoost).</div>
+            </div>
+            <div class="highlight">
+              <span class="ico">📈</span>
+              <div><b>Impact</b>: Reduced <b>MAPE ~18% → ~9%</b> in an AWS serverless demand-forecasting project.</div>
+            </div>
+            <div class="highlight">
+              <span class="ico">🛠️</span>
+              <div><b>Skills spotlight</b>: Python, SQL, Pandas, AWS (Lambda, S3), Tableau/Power BI; Salesforce Admin &amp; Apex, SOQL, Flows, CI/CD with Git &amp; GitHub Actions.</div>
+            </div>
+          </div>
+        </div>
+
         <div class="nav-bar" aria-label="Primary site navigation">
           <ul class="seg-nav">
             <li><a href="#about" class="active">About</a></li>
@@ -255,48 +219,62 @@
     <section id="contact" class="section contact">
       <h2 class="section-title">Connect with me</h2>
 
-      <!-- Social icon buttons (replace the href values with your profiles) -->
       <div class="socials">
         <!-- LinkedIn -->
-        <a href="www.linkedin.com/in/sujith-lakkimsetti2-908a82171" target="_self" aria-label="LinkedIn" title="LinkedIn">
+        <a href="https://www.linkedin.com/in/sujith-lakkimsetti-908a82171/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path fill="#0A66C2" d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V24h-4V8.5zM8.5 8.5h3.8v2.1h.05c.53-1 1.85-2.1 3.8-2.1 4.06 0 4.8 2.67 4.8 6.14V24h-4v-6.8c0-1.62-.03-3.7-2.26-3.7-2.26 0-2.6 1.77-2.6 3.6V24h-4V8.5z"/>
           </svg>
         </a>
-        <!-- Instagram -->
-        <a href="https://www.instagram.com/YOUR_INSTAGRAM_HANDLE" target="_self" aria-label="Instagram" title="Instagram">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <defs>
-              <linearGradient id="ig" x1="0" x2="1" y1="1" y2="0">
-                <stop offset="0" stop-color="#fd5949"/><stop offset=".5" stop-color="#d6249f"/><stop offset="1" stop-color="#285AEB"/>
-              </linearGradient>
-            </defs>
-            <path fill="url(#ig)" d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.06 1.9.26 2.4.44.6.24 1.1.54 1.6 1.02.48.48.78.98 1.02 1.6.19.5.38 1.2.44 2.4.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.06 1.2-.26 1.9-.44 2.4a4.5 4.5 0 0 1-1.02 1.6 4.5 4.5 0 0 1-1.6 1.02c-.5.19-1.2.38-2.4.44-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.06-1.9-.26-2.4-.44a4.5 4.5 0 0 1-1.6-1.02 4.5 4.5 0 0 1-1.02-1.6c-.19-.5-.38-1.2-.44-2.4C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.06-1.2.26-1.9.44-2.4.24-.6.54-1.1 1.02-1.6.48-.48.98-.78 1.6-1.02.5-.19 1.2-.38 2.4-.44C8.4 2.2 8.8 2.2 12 2.2Zm0 2.2c-3.1 0-3.5 0-4.8.1-.9.04-1.4.2-1.7.33-.43.17-.74.37-1.07.7-.33.33-.53.64-.7 1.07-.13.34-.29.8-.33 1.7-.1 1.3-.1 1.7-.1 4.8s0 3.5.1 4.8c.04.9.2 1.4.33 1.7.17.43.37.74.7 1.07.33.33.64.53 1.07.7.34.13.8.29 1.7.33 1.3.1 1.7.1 4.8.1s3.5 0 4.8-.1c.9-.04 1.4-.2 1.7-.33.43-.17.74-.37 1.07-.7.33-.33.53-.64.7-1.07.13-.34.29-.8.33-1.7.1-1.3.1-1.7.1-4.8s0-3.5-.1-4.8c-.04-.9-.2-1.4-.33-1.7-.17-.43-.37-.74-.7-1.07a2.7 2.7 0 0 0-1.07-.7c-.34-.13-.8-.29-1.7-.33-1.3-.1-1.7-.1-4.8-.1Zm0 3.2a6.4 6.4 0 1 1 0 12.8 6.4 6.4 0 0 1 0-12.8Zm0 2.2a4.2 4.2 0 1 0 0 8.4 4.2 4.2 0 0 0 0-8.4Zm6.6-3.3a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0Z"/>
-          </svg>
+
+        <!-- Instagram with provided image, opens in new tab -->
+        <a href="https://www.instagram.com/sujith_lakkimsetti/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+          <img align="center"
+               src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg"
+               alt="sujith_lakkimsetti"
+               height="30" width="40"
+               style="max-width:100%; height:auto; max-height:30px;">
         </a>
       </div>
 
       <h3 class="section-title" style="margin-top:0">Languages and Tools</h3>
       <ul class="tool-icons">
-        <li><a href="#"><img alt="AWS" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg"></a></li>
-        <li><a href="#"><img alt="Bootstrap" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"></a></li>
-        <li><a href="#"><img alt="CSS3" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"></a></li>
-        <li><a href="#"><img alt="HTML5" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"></a></li>
-        <li><a href="#"><img alt="Java" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"></a></li>
-        <li><a href="#"><img alt="JavaScript" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"></a></li>
-        <li><a href="#"><img alt="PostgreSQL" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"></a></li>
-        <li><a href="#"><img alt="React" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"></a></li>
+        <li><a href="https://aws.amazon.com/" target="_blank" rel="noopener">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+               alt="AWS" width="56" height="56" style="max-width:100%;height:auto;max-height:56px">
+        </a></li>
+        <li><a href="https://www.python.org/" target="_blank" rel="noopener">
+          <img alt="Python" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg">
+        </a></li>
+        <li><a href="https://www.java.com/en/" target="_blank" rel="noopener">
+          <img alt="Java" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg">
+        </a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener">
+          <img alt="JavaScript" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg">
+        </a></li>
+        <li><a href="https://www.w3schools.com/html/" target="_blank" rel="noopener">
+          <img alt="HTML5" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg">
+        </a></li>
+        <li><a href="https://www.w3schools.com/css/" target="_blank" rel="noopener">
+          <img alt="CSS3" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg">
+        </a></li>
+        <li><a href="https://www.postgresql.org/" target="_blank" rel="noopener">
+          <img alt="PostgreSQL" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg">
+        </a></li>
+        <li><a href="https://react.dev/" target="_blank" rel="noopener">
+          <img alt="React" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
+        </a></li>
+        <li><a href="https://github.com/" target="_blank" rel="noopener">
+          <img alt="GitHub" src="https://cdn.simpleicons.org/github/ffffff">
+        </a></li>
       </ul>
 
-      <!-- Keep your original contact details if you like -->
       <div class="card" style="margin-top:22px">
-        <p class="muted">Email, phone, or socials:</p>
+        <p class="muted">Email, phone</p>
         <p>
           📍 Albany, NY &nbsp;•&nbsp;
           📧 <a href="mailto:sujithlakkimsetti222@gmail.com">sujithlakkimsetti222@gmail.com</a> &nbsp;•&nbsp;
-          ☎️ <a href="tel:+13619605946">+1 (361) 960-5946</a> &nbsp;•&nbsp;
-          💼 <a href="https://www.linkedin.com/in/YOUR_LINKEDIN_HANDLE" target="_self" rel="noopener">LinkedIn</a> &nbsp;•&nbsp;
-          🐙 <a href="https://github.com/YOUR_GITHUB_HANDLE" target="_self" rel="noopener">GitHub</a>
+          ☎️ <a href="tel:+13619605946">+1 (361) 960-5946</a>
         </p>
       </div>
     </section>
@@ -306,23 +284,16 @@
     <div class="container">© <span id="year"></span> Sujith Lakkimsetti. All rights reserved.</div>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 
-  <!-- SEO structured data -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Person",
-    "name":"Sujith Lakkimsetti",
-    "jobTitle":"Software Developer / Data Analyst",
-    "email":"mailto:sujithlakkimsetti222@gmail.com",
-    "telephone":"+13619605946",
-    "address":{"addressLocality":"Albany","addressRegion":"NY","addressCountry":"US"},
-    "url":"https://your-domain.com",
-    "sameAs":["https://github.com/YOUR_GITHUB_HANDLE","https://www.linkedin.com/in/YOUR_LINKEDIN_HANDLE"]
-  }
+  <!-- Auto-open external links in a new tab (extra safety) -->
+  <script>
+    document.querySelectorAll('a[href^="http"]').forEach(a => {
+      if (!a.href.includes(location.hostname)) {
+        a.target = "_blank";
+        a.rel = "noopener";
+      }
+    });
   </script>
 </body>
 </html>
